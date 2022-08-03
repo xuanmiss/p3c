@@ -15,7 +15,9 @@
  */
 package com.alibaba.p3c.pmd.lang.java.rule.oop;
 
+import net.sourceforge.pmd.Rule;
 import net.sourceforge.pmd.testframework.SimpleAggregatorTst;
+import org.junit.Test;
 
 /**
  * Test for oop rules.
@@ -38,5 +40,12 @@ public class OopRuleTest extends SimpleAggregatorTst {
         addRule(RULESET, "PojoMustOverrideToStringRule");
         addRule(RULESET, "StringConcatRule");
         addRule(RULESET, "BigDecimalAvoidDoubleConstructorRule");
+        addRule(RULESET, "MethodParameterCountRule");
+    }
+
+    @Test
+    public void methodParameterCountRuleTest() {
+        Rule rule = this.findRule(RULESET, "MethodParameterCountRule");
+        runTests(rule, "MethodParameterCountRule");
     }
 }

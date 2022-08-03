@@ -560,4 +560,11 @@ Positive example:
         <![CDATA[To judge the equivalence of floating-point numbers, == cannot be used for primitive types, while equals cannot be used for wrapper classes.]]>
     </entry>
 
+    <entry key="java.oop.MethodParameterCountRule.violation.msg">
+        <![CDATA[The parameter list of method [% s] is too long. ]]>
+    </entry>
+    <entry key="java.oop.MethodParameterCountRule.rule.msg">
+        <![CDATA[Note: the method parameter list is not allowed to exceed (contain) 10, it is recommended to encapsulate into an object.]]>
+    </entry>
+
 </properties>

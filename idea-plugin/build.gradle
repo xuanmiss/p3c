@@ -3,10 +3,12 @@ buildscript {
         maven {
             url "https://oss.sonatype.org/content/repositories/snapshots/"
         }
-        maven {
-            url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
-        }
+//        jcenter{ url "http://jcenter.bintray.com/"}
+//        maven {
+//            url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
+//        }
         mavenCentral()
+        google()
 
     }
     dependencies {
@@ -23,11 +25,21 @@ allprojects {
     sourceCompatibility = 1.8
     compileJava.options.encoding = 'UTF-8'
     configurations.all {
-        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+//        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+        resolutionStrategy.cacheChangingModulesFor 24, 'hours'
     }
     repositories {
-        jcenter()
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+        jcenter{ url "http://jcenter.bintray.com/"}
+        google()
+
         mavenCentral()
+        maven {
+            url 'http://maven.aliyun.com/repository/gradle-plugin'
+        }
+        gradlePluginPortal()
     }
 
     dependencies {
